@@ -53,30 +53,30 @@ War.prototype.addSaxon = function(saxon) {
   this.saxonArmy.push(saxon);
 }
 War.prototype.vikingAttack = function() {
-  var randomVikingIndex = selectRandomIndex(this['vikingArmy']);
-  var randomSaxonIndex = selectRandomIndex(this['saxonArmy']);
-  var randomSaxon = this['saxonArmy'][randomSaxonIndex];
-  var randomViking = this['vikingArmy'][randomVikingIndex];
+  let randomVikingIndex = selectRandomIndex(this['vikingArmy']);
+  let randomSaxonIndex = selectRandomIndex(this['saxonArmy']);
+  let randomSaxon = this['saxonArmy'][randomSaxonIndex];
+  let randomViking = this['vikingArmy'][randomVikingIndex];
   if(randomSaxon.health <= 0) {
     this.saxonArmy.splice(randomSaxonIndex, 1);
   }
   return randomSaxon.receiveDamage(randomViking.strength);
   /*
-    Our opinion is that this function call should be above the if,
+    This function call should be above the if,
     but all tests pass this way.
   */
 }
 War.prototype.saxonAttack = function() {
-  var randomVikingIndex = selectRandomIndex(this['vikingArmy']);
-  var randomSaxonIndex = selectRandomIndex(this['saxonArmy']);
-  var randomSaxon = this['saxonArmy'][randomSaxonIndex];
-  var randomViking = this['vikingArmy'][randomVikingIndex];
+  let randomVikingIndex = selectRandomIndex(this['vikingArmy']);
+  let randomSaxonIndex = selectRandomIndex(this['saxonArmy']);
+  let randomSaxon = this['saxonArmy'][randomSaxonIndex];
+  let randomViking = this['vikingArmy'][randomVikingIndex];
   if(randomViking.health <= 0) {
     this.vikingArmy.splice(randomVikingIndex, 1);
   }
   return randomViking.receiveDamage(randomSaxon.strength);
   /*
-    Our opinion is that this function call should be above the if,
+    This function call should be above the if,
     but all tests pass this way.
   */
 }
